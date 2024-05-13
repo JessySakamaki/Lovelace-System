@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" href="affogato.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
+    <title>Bootstrap Example</title>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de capitulo</title>
+    <link href="apiLivro.js">
+
+</head>
+
+<body>
+    <!--Navbar-->
+    <nav class="navbar navbar-light" style="background-color: #a99884;">
+        <a class="navbar-brand" href="principal.html">Lovelace</a>
+        <a  href="capitulo_form.html"><button class="icone-registro-capitulo" type="submit"><img src="../imagens/icone_capitulo.png" width="35" height="35"></button></a>
+    
+        <a  href="livro_form.html"><button class="icone-registro-livro" type="submit"><img src="../imagens/iconezinho_registro_livro.png" width="35" height="35"></button></a>
+        <a  href="tela.html"><button class="btn-outline-success" type="submit"><img src="../imagens/iconezinho.png" width="35" height="35"></button></a>
+    </nav> 
+
+    <div class="box">
+        <h1>Cadastro de capítulo</h1>
+
+        <form id="capituloForm">
+            <input type = "hidden" id = "capituloId">
+            <label for = "titulo">Titulo:</label>
+            <input type = "text" id = "titulo" required>
+            <label for = "qtd_paginas">Quantidade de páginas:</label>
+            <input type = "text" id = "qtd_paginas" required>
+            <button type = "submit">Registrar capítulo</button>
+        </form>
+
+        <table>
+
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Título</th>
+                    <th>Quantidade de páginas</th>
+                </tr>
+            </thead>
+
+            <tbody 
+            id = "capituloTable">
+            </tbody>
+
+        </table>
+
+    </div>
+
+    <script>
+        const API_URL = 'http://localhost:3000/capitulos';
+
+        const capituloForm = document.getElementById('capituloForm');
+        const capituloIdInput = document.getElementById('capituloId');
+        const tituloInput = document.getElementById('titulo');
+        const qtd_paginasInput = document.getElementById('qtd_paginas');
+
+        capituloForm.addEventListener('submit', async (event) => {
+            event.preventDefault();
+
+            const capituloId = capituloIdInput.value;
+            const titulo = tituloInput.value;
+            const qtd_paginas = qtd_paginasInput.value;
+
+            if (capituloId) {
+                await fetch(API_URL + '/' + capituloId, {
+                    method: 'PUT',
+                    headers: {
+                        'Content-Type' : 'application/json'
+                    },
+                    body: JSON.stringify({titulo, qtd_paginas})
+                });
+            }
+
+            else{
+                await fetch(API_URL, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type' : 'application/json'
+                    },
+                    body: JSON.stringify({titulo, qtd_paginas})
+                });
+            }
+
+            resetForm();
+            await loadCapitulos();
+        });
+
+        function resetForm() {
+            capituloIdInput.value = '';
+            tituloInput.value = '';
+            qtd_paginasInput.value = '';
+        }
+
+        async function loadCapitulos() {
+            const response = await fetch(API_URL);
+            const capitulos = await response.json();
+
+            let html = '';
+            
+            capitulos.forEach(capitulo => {
+            html += `
+            <tr>
+                <td>${capitulo.id}</td>
+                <td>${capitulo.titulo}</td>
+                <td>${capitulo.qtd_paginas}</td>
+                <td>
+                    <button onclick="editCapitulo(${capitulo.id})">Editar</button>
+                    <button onclick="deleteCapitulo(${capitulo.id})">Excluir</button>
+                </td>
+            </tr>
+        `;
+            });
+
+        capituloTable.innerHTML = html;
+
+    }
+
+    async function editCapitulo(id) {
+        const response = await fetch(API_URL + '/' + id);
+        const capitulo = await response.json();
+        capituloIdInput.value = capitulo.id;
+        tituloInput.value = capitulo.titulo;
+        qtd_paginasInput.value = capitulo.qtd_paginas;
+    }
+
+    async function deleteCapitulo(id) {
+        await fetch(API_URL + '/' + id, {
+            method: 'DELETE'
+        });
+
+        await loadCapitulos();
+    }
+    
+    loadCapitulos();
+
+    </script>
+
+</body>

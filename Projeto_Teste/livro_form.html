@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
+    <title>Bootstrap Example</title>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de livro</title>
+    <link href="apiLivro.js">
+    <link rel="stylesheet" href="icedCoffee.css">
+
+</head>
+
+<body>
+    <!--Navbar-->
+    <nav class="navbar navbar-light" style="background-color: #a99884;">
+        <a class="navbar-brand" href="principal.html">Lovelace</a>
+        <a  href="capitulo_form.html"><button class="icone-registro-capitulo" type="submit"><img src="../imagens/icone_capitulo.png" width="35" height="35"></button></a>
+    
+        <a  href="livro_form.html"><button class="icone-registro-livro" type="submit"><img src="../imagens/iconezinho_registro_livro.png" width="35" height="35"></button></a>
+        <a  href="tela.html"><button class="btn-outline-success" type="submit"><img src="../imagens/iconezinho.png" width="35" height="35"></button></a>
+    </nav> 
+
+    <div class="alinhar">
+
+        <img  align="right" src="../imagens/iconlivro.png">
+
+        <div class="box">
+            <h1>Cadastro de livro</h1>
+
+            <form id="livroForm">
+                <input type = "hidden" id = "livroId">
+                <label for = "autor">Autor:</label>
+                <input type = "text" id = "autor" required>
+                <label for = "idioma">Idioma:</label>
+                <input type = "text" id = "idioma" required>
+                <label for = "titulo">Titulo:</label>
+                <input type = "text" id = "titulo" required>
+                <label for = "sinopse">Sinopse:</label>
+                <input type = "text" id = "sinopse" required>
+                <label for = "capitulos_disponiveis">Capítulos disponíveis:</label>
+                <input type = "text" id = "capitulos_disponiveis" required>
+                <button class="registrar-btn" type = "submit">Registrar livro</button>
+            </form>
+
+        </div>
+
+    </div>
+
+        <table>
+
+            <thead>
+
+                <tr>
+                    <th>ID</th>
+                    <th>Autor</th>
+                    <th>Idioma</th>
+                    <th>Título</th>
+                    <th>Sinopse</th>
+                    <th>Capítulos disponíveis</th>
+                </tr>
+
+            </thead>
+
+        <tbody 
+        id = "livroTable">
+        </tbody>
+
+        </table>
+
+
+    <!---------------------SCRIPT----------------------->
+    <script>
+        const API_URL = 'http://localhost:3000/livros';
+
+        const livroForm = document.getElementById('livroForm');
+        const livroIdInput = document.getElementById('livroId');
+        const autorInput = document.getElementById('autor');
+        const idiomaInput = document.getElementById('idioma');
+        const tituloInput = document.getElementById('titulo');
+        const sinopseInput = document.getElementById('sinopse');
+        const capitulos_disponiveisInput = document.getElementById('capitulos_disponiveis');
+
+        livroForm.addEventListener('submit', async (event) => {
+            event.preventDefault();
+
+            const livroId = livroIdInput.value;
+            const autor = autorInput.value;
+            const idioma = idiomaInput.value;
+            const titulo = tituloInput.value;
+            const sinopse = sinopseInput.value;
+            const capitulos_disponiveis = capitulos_disponiveisInput.value;
+
+            if (livroId) {
+                await fetch(API_URL + '/' + livroId, {
+                    method: 'PUT',
+                    headers: {
+                        'Content-Type' : 'application/json'
+                    },
+                    body: JSON.stringify({autor, idioma, titulo, sinopse, capitulos_disponiveis})
+                });
+            }
+
+            else{
+                await fetch(API_URL, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type' : 'application/json'
+                    },
+                    body: JSON.stringify({autor, idioma, titulo, sinopse, capitulos_disponiveis})
+                });
+            }
+
+            resetForm();
+            await loadLivros();
+        });
+
+        function resetForm() {
+            livroIdInput.value = '';
+            autorInput.value = '';
+            idiomaInput.value = '';
+            tituloInput.value = '';
+            sinopseInput.value = '';
+            capitulos_disponiveisInput.value = '';
+        }
+
+        async function loadLivros() {
+            const response = await fetch(API_URL);
+            const livros = await response.json();
+
+            let html = '';
+            
+            livros.forEach(livro => {
+            html += `
+            <tr>
+                <td>${livro.id}</td>
+                <td>${livro.autor}</td>
+                <td>${livro.idioma}</td>
+                <td>${livro.titulo}</td>
+                <td>${livro.sinopse}</td>
+                <td>${livro.capitulos_disponiveis}</td>
+                <td>
+                    <button onclick="editLivro(${livro.id})">Editar</button>
+                    <button onclick="deleteLivro(${livro.id})">Excluir</button>
+                </td>
+            </tr>
+        `;
+            });
+
+        livroTable.innerHTML = html;
+
+    }
+
+    async function editLivro(id) {
+        const response = await fetch(API_URL + '/' + id);
+        const livro = await response.json();
+        livroIdInput.value = livro.id;
+        autorInput.value = livro.autor;
+        idiomaInput.value = livro.idioma;
+        tituloInput.value = livro.titulo;
+        sinopseInput.value = livro.sinopse;
+        capitulos_disponiveisInput.value = livro.capitulos_disponiveis;
+    }
+
+    async function deleteLivro(id) {
+        await fetch(API_URL + '/' + id, {
+            method: 'DELETE'
+        });
+
+        await loadLivros();
+    }
+    
+    loadLivros();
+
+    </script>
+
+        </body>

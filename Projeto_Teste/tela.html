@@ -1,0 +1,111 @@
+<head>
+    <link rel="stylesheet" href="capuccino.css">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+</head>
+
+<body>
+
+    <a href="principal.html"><button class="btn_back">voltar</button></a>
+
+    <div class="container">
+        <div class="card card-container">
+            <p>Faça login para continuar</p>
+            <p id="profile-name" class="profile-name-card"></p>
+            <form class="form-signin">
+                <span id="reauth-email" class="reauth-email"></span>
+                <input type="email" id="inputEmail" class="form-control" placeholder="E-mail" required autofocus>
+                <input type="password" id="inputPassword" class="form-control" placeholder="Senha" required>
+                <div id="remember" class="checkbox">
+                    <label>
+                        <input type="checkbox" value="remember-me"> Lembre-se de mim
+                    </label>
+                </div>
+            </form><!-- /form -->
+            <a href="principal.html"><button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">ENTRAR</button></a>
+            <a href="#" class="forgot-password">
+                Esqueceu a senha?
+            </a>
+        </div><!-- /card-container -->
+    </div><!-- /container -->
+    
+<!----------------------------------------------------------------------------FAZENDO FUNCIONAR--------------------------------------------------------------------------------------->
+
+
+    <script>
+        $( document ).ready(function() {
+        // DOM ready
+
+        // Test data
+        // testLocalStorageData();
+        // Load profile if it exits
+        loadProfile();
+        });
+
+        /**
+        * Function that gets the data of the profile in case
+        * thar it has already saved in localstorage. Only the
+        * UI will be update in case that all data is available
+        *
+        * A not existing key in localstorage return null
+        */
+        function getLocalProfile(callback){
+            var profileName        = localStorage.getItem("PROFILE_NAME");
+            var profileReAuthEmail = localStorage.getItem("PROFILE_REAUTH_EMAIL");
+
+            if(profileName !== null && profileReAuthEmail !== null && profileImgSrc !== null) {
+                callback(profileImgSrc, profileName, profileReAuthEmail);
+            }
+        }
+
+        /**
+        * Main function that load the profile if exists
+        * in localstorage
+        */
+        function loadProfile() {
+            if(!supportsHTML5Storage()) { return false; }
+            // we have to provide to the callback the basic
+            // information to set the profile
+            getLocalProfile(function(profileImgSrc, profileName, profileReAuthEmail) {
+            //changes in the UI
+                $("#profile-img").attr("src",profileImgSrc);
+                $("#profile-name").html(profileName);
+                $("#reauth-email").html(profileReAuthEmail);
+                $("#inputEmail").hide();
+                $("#remember").hide();
+            });
+        }
+
+        /**
+        * function that checks if the browser supports HTML5
+        * local storage
+        *
+        * @returns {boolean}
+        */
+        function supportsHTML5Storage() {
+            try {
+                return 'localStorage' in window && window['localStorage'] !== null;
+            } catch (e) {
+                return false;
+            }
+        }
+
+        /**
+        * Test data. This data will be safe by the web app
+        * in the first successful login of a auth user.
+        * To Test the scripts, delete the localstorage data
+        * and comment this call.
+        *
+        * @returns {boolean}
+        */
+        function testLocalStorageData() {
+            if(!supportsHTML5Storage()) { return false; }
+            localStorage.setItem("PROFILE_IMG_SRC", "//lh3.googleusercontent.com/-6V8xOA6M7BA/AAAAAAAAAAI/AAAAAAAAAAA/rzlHcD0KYwo/photo.jpg?sz=120" );
+            localStorage.setItem("PROFILE_NAME", "César Izquierdo Tello");
+            localStorage.setItem("PROFILE_REAUTH_EMAIL", "oneaccount@gmail.com");
+        }
+    </script>
+
+    
+</body>

@@ -1,0 +1,782 @@
+<head>
+    <link rel="stylesheet" href="macchiatto.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
+    <title>Bootstrap Example</title>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+
+  <!--Navbar-->
+  <nav class="navbar navbar-light" style="background-color: #a99884;">
+    <a class="navbar-brand" href="principal.html">Lovelace</a>
+    <a  href="capitulo_form.html"><button class="icone-registro-capitulo" type="submit"><img src="../imagens/icone_capitulo.png" width="35" height="35"></button></a>
+    
+        <a  href="livro_form.html"><button class="icone-registro-livro" type="submit"><img src="../imagens/iconezinho_registro_livro.png" width="35" height="35"></button></a>
+        <a  href="tela.html"><button class="btn-outline-success" type="submit"><img src="../imagens/iconezinho.png" width="35" height="35"></button></a>
+
+      </nav> 
+    
+  <!--Carrossel-->
+  <div class= "carousel-ads">
+  <div id="carouselExample" class="carousel slide">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img class="bd-placeholder-img bd-placeholder-img-lg d-block w-100" src="../imagens/promocao_imagem.png" alt="Promoção"  width="800" height="300">
+      </div>
+
+      <div class="carousel-item">
+        <img class="bd-placeholder-img bd-placeholder-img-lg d-block w-100" src="../imagens/livros_ai.png" alt="FavDoMes"  width="800" height="300">
+      </div>
+          
+      <div class="carousel-item">
+        <img class="bd-placeholder-img bd-placeholder-img-lg d-block w-100" src="../imagens/maislivroaaa.png" alt="FavDoMes"  width="800" height="300">
+      </div>
+    </div>
+
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+  </div>
+
+  <!--lista de lrivos-->
+  <section class="product">
+    <h2 class="product-category">Romance</h2>
+    
+    <!--setinhas-->
+    <button class="pre-btn"><img src="https://cdn4.iconfinder.com/data/icons/defaulticon/icons/png/256x256/arrow-right.png" height="50px" width="50px" alt=""></button>
+    <button class="next-btn"><img src="https://cdn4.iconfinder.com/data/icons/defaulticon/icons/png/256x256/arrow-right.png" height="50px" width="50px" alt=""></button>
+
+    <!--lrivo-->
+    <div class="product-container">
+      <div class="product-card">
+        <div class="product-image">
+          <span class="discount-tag">50% de desconto</span>
+          <img src="https://m.media-amazon.com/images/I/71SYepTUsDL.jpg" class="product-thumb" alt="">
+          <a href="visu_livro.html"><button class="card-btn">ver mais</button></a>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-image">
+          <span class="discount-tag">20% de desconto</span>
+          <img src="https://m.media-amazon.com/images/I/91yEPgRcELL.jpg" class="product-thumb" alt="">
+          <button class="card-btn">ver mais</button>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-image">
+          <span class="discount-tag">5% de desconto</span>
+          <img src="https://m.media-amazon.com/images/I/61oIS8ewc9L.jpg" class="product-thumb" alt="">
+          <button class="card-btn">ver mais</button>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-image">
+          <img src="https://m.media-amazon.com/images/I/51OYESeM8eL.jpg" class="product-thumb" alt="">
+          <button class="card-btn">ver mais</button>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-image">
+          <img src="https://m.media-amazon.com/images/I/719trP22IcL.jpg" class="product-thumb" alt="">
+          <button class="card-btn">ver mais</button>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-image">
+          <img src="https://m.media-amazon.com/images/I/71+uw0YHx7L.jpg" class="product-thumb" alt="">
+          <button class="card-btn">ver mais</button>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-image">
+          <img src="https://m.media-amazon.com/images/I/81KrxNEQelL.jpg" class="product-thumb" alt="">
+          <button class="card-btn">ver mais</button>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-image">
+          <img src="https://m.media-amazon.com/images/I/719esIW3D7L.jpg" class="product-thumb" alt="">
+          <button class="card-btn">ver mais</button>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-image">
+          <img src="https://m.media-amazon.com/images/I/81UXlJUcQ9L.jpg" class="product-thumb" alt="">
+          <button class="card-btn">ver mais</button>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-image">
+          <span class="discount-tag">50% de desconto</span>
+          <img src="https://m.media-amazon.com/images/I/71SYepTUsDL.jpg" class="product-thumb" alt="">
+          <a href="visu_livro.html"><button class="card-btn">ver mais</button></a>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-image">
+          <span class="discount-tag">20% de desconto</span>
+          <img src="https://m.media-amazon.com/images/I/91yEPgRcELL.jpg" class="product-thumb" alt="">
+          <button class="card-btn">ver mais</button>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-image">
+          <span class="discount-tag">5% de desconto</span>
+          <img src="https://m.media-amazon.com/images/I/61oIS8ewc9L.jpg" class="product-thumb" alt="">
+          <button class="card-btn">ver mais</button>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-image">
+          <img src="https://m.media-amazon.com/images/I/51OYESeM8eL.jpg" class="product-thumb" alt="">
+          <button class="card-btn">ver mais</button>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-image">
+          <img src="https://m.media-amazon.com/images/I/719trP22IcL.jpg" class="product-thumb" alt="">
+          <button class="card-btn">ver mais</button>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-image">
+          <img src="https://m.media-amazon.com/images/I/71+uw0YHx7L.jpg" class="product-thumb" alt="">
+          <button class="card-btn">ver mais</button>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-image">
+          <img src="https://m.media-amazon.com/images/I/81KrxNEQelL.jpg" class="product-thumb" alt="">
+          <button class="card-btn">ver mais</button>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-image">
+          <img src="https://m.media-amazon.com/images/I/719esIW3D7L.jpg" class="product-thumb" alt="">
+          <button class="card-btn">ver mais</button>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-image">
+          <img src="https://m.media-amazon.com/images/I/81UXlJUcQ9L.jpg" class="product-thumb" alt="">
+          <button class="card-btn">ver mais</button>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-image">
+          <span class="discount-tag">50% de desconto</span>
+          <img src="https://m.media-amazon.com/images/I/71SYepTUsDL.jpg" class="product-thumb" alt="">
+          <a href="visu_livro.html"><button class="card-btn">ver mais</button></a>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-image">
+          <span class="discount-tag">20% de desconto</span>
+          <img src="https://m.media-amazon.com/images/I/91yEPgRcELL.jpg" class="product-thumb" alt="">
+          <button class="card-btn">ver mais</button>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-image">
+          <span class="discount-tag">5% de desconto</span>
+          <img src="https://m.media-amazon.com/images/I/61oIS8ewc9L.jpg" class="product-thumb" alt="">
+          <button class="card-btn">ver mais</button>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-image">
+          <img src="https://m.media-amazon.com/images/I/51OYESeM8eL.jpg" class="product-thumb" alt="">
+          <button class="card-btn">ver mais</button>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-image">
+          <img src="https://m.media-amazon.com/images/I/719trP22IcL.jpg" class="product-thumb" alt="">
+          <button class="card-btn">ver mais</button>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-image">
+          <img src="https://m.media-amazon.com/images/I/71+uw0YHx7L.jpg" class="product-thumb" alt="">
+          <button class="card-btn">ver mais</button>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-image">
+          <img src="https://m.media-amazon.com/images/I/81KrxNEQelL.jpg" class="product-thumb" alt="">
+          <button class="card-btn">ver mais</button>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-image">
+          <img src="https://m.media-amazon.com/images/I/719esIW3D7L.jpg" class="product-thumb" alt="">
+          <button class="card-btn">ver mais</button>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-image">
+          <img src="https://m.media-amazon.com/images/I/81UXlJUcQ9L.jpg" class="product-thumb" alt="">
+          <button class="card-btn">ver mais</button>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-image">
+          <span class="discount-tag">50% de desconto</span>
+          <img src="https://m.media-amazon.com/images/I/71SYepTUsDL.jpg" class="product-thumb" alt="">
+          <a href="visu_livro.html"><button class="card-btn">ver mais</button></a>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-image">
+          <span class="discount-tag">20% de desconto</span>
+          <img src="https://m.media-amazon.com/images/I/91yEPgRcELL.jpg" class="product-thumb" alt="">
+          <button class="card-btn">ver mais</button>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-image">
+          <span class="discount-tag">5% de desconto</span>
+          <img src="https://m.media-amazon.com/images/I/61oIS8ewc9L.jpg" class="product-thumb" alt="">
+          <button class="card-btn">ver mais</button>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-image">
+          <img src="https://m.media-amazon.com/images/I/51OYESeM8eL.jpg" class="product-thumb" alt="">
+          <button class="card-btn">ver mais</button>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-image">
+          <img src="https://m.media-amazon.com/images/I/719trP22IcL.jpg" class="product-thumb" alt="">
+          <button class="card-btn">ver mais</button>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-image">
+          <img src="https://m.media-amazon.com/images/I/71+uw0YHx7L.jpg" class="product-thumb" alt="">
+          <button class="card-btn">ver mais</button>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-image">
+          <img src="https://m.media-amazon.com/images/I/81KrxNEQelL.jpg" class="product-thumb" alt="">
+          <button class="card-btn">ver mais</button>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-image">
+          <img src="https://m.media-amazon.com/images/I/719esIW3D7L.jpg" class="product-thumb" alt="">
+          <button class="card-btn">ver mais</button>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-image">
+          <img src="https://m.media-amazon.com/images/I/81UXlJUcQ9L.jpg" class="product-thumb" alt="">
+          <button class="card-btn">ver mais</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+    <!--lista de lrivos-->
+    <section class="product">
+      <h2 class="product-category">Aventura</h2>
+      
+      <!--setinhas-->
+      <button class="pre-btn"><img src="https://cdn4.iconfinder.com/data/icons/defaulticon/icons/png/256x256/arrow-right.png" height="50px" width="50px" alt=""></button>
+      <button class="next-btn"><img src="https://cdn4.iconfinder.com/data/icons/defaulticon/icons/png/256x256/arrow-right.png" height="50px" width="50px" alt=""></button>
+  
+      <!--lrivo-->
+      <div class="product-container">
+        <div class="product-card">
+          <div class="product-image">
+            <span class="discount-tag">80% de desconto</span>
+            <img src="https://m.media-amazon.com/images/I/71p0560f0NL.jpg" class="product-thumb" alt="">
+            <button class="card-btn">ver mais</button>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-image">
+            <span class="discount-tag">30% de desconto</span>
+            <img src="https://m.media-amazon.com/images/I/81SWBRKfExL.jpg" class="product-thumb" alt="">
+            <button class="card-btn">ver mais</button>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-image">
+            <span class="discount-tag">10% de desconto</span>
+            <img src="https://livrariataverna.com.br/1152/aventuras-de-alice-no-pais-das-maravilhas-lewis-carroll.jpg" class="product-thumb" alt="">
+            <button class="card-btn">ver mais</button>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-image">
+            <img src="https://m.media-amazon.com/images/I/51gzrvHasGL.jpg" class="product-thumb" alt="">
+            <button class="card-btn">ver mais</button>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-image">
+            <img src="https://m.media-amazon.com/images/I/81Rr0awAmwL.jpg" class="product-thumb" alt="">
+            <button class="card-btn">ver mais</button>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-image">
+            <img src="https://leitorcompulsivo.com.br/wp-content/uploads/2018/07/Muitas_aguas.jpg" class="product-thumb" alt="">
+            <button class="card-btn">ver mais</button>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-image">
+            <img src="https://m.media-amazon.com/images/I/91uvqTqFM1L.jpg" class="product-thumb" alt="">
+            <button class="card-btn">ver mais</button>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-image">
+            <img src="https://m.media-amazon.com/images/I/61N2ZCfEB4L.jpg" class="product-thumb" alt="">
+            <button class="card-btn">ver mais</button>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-image">
+            <img src="https://m.media-amazon.com/images/I/91ETGRlNfCL.jpg" class="product-thumb" alt="">
+            <button class="card-btn">ver mais</button>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-image">
+            <span class="discount-tag">80% de desconto</span>
+            <img src="https://m.media-amazon.com/images/I/71p0560f0NL.jpg" class="product-thumb" alt="">
+            <button class="card-btn">ver mais</button>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-image">
+            <span class="discount-tag">30% de desconto</span>
+            <img src="https://m.media-amazon.com/images/I/81SWBRKfExL.jpg" class="product-thumb" alt="">
+            <button class="card-btn">ver mais</button>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-image">
+            <span class="discount-tag">10% de desconto</span>
+            <img src="https://livrariataverna.com.br/1152/aventuras-de-alice-no-pais-das-maravilhas-lewis-carroll.jpg" class="product-thumb" alt="">
+            <button class="card-btn">ver mais</button>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-image">
+            <img src="https://m.media-amazon.com/images/I/51gzrvHasGL.jpg" class="product-thumb" alt="">
+            <button class="card-btn">ver mais</button>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-image">
+            <img src="https://m.media-amazon.com/images/I/81Rr0awAmwL.jpg" class="product-thumb" alt="">
+            <button class="card-btn">ver mais</button>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-image">
+            <img src="https://leitorcompulsivo.com.br/wp-content/uploads/2018/07/Muitas_aguas.jpg" class="product-thumb" alt="">
+            <button class="card-btn">ver mais</button>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-image">
+            <img src="https://m.media-amazon.com/images/I/91uvqTqFM1L.jpg" class="product-thumb" alt="">
+            <button class="card-btn">ver mais</button>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-image">
+            <img src="https://m.media-amazon.com/images/I/61N2ZCfEB4L.jpg" class="product-thumb" alt="">
+            <button class="card-btn">ver mais</button>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-image">
+            <img src="https://m.media-amazon.com/images/I/91ETGRlNfCL.jpg" class="product-thumb" alt="">
+            <button class="card-btn">ver mais</button>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-image">
+            <span class="discount-tag">80% de desconto</span>
+            <img src="https://m.media-amazon.com/images/I/71p0560f0NL.jpg" class="product-thumb" alt="">
+            <button class="card-btn">ver mais</button>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-image">
+            <span class="discount-tag">30% de desconto</span>
+            <img src="https://m.media-amazon.com/images/I/81SWBRKfExL.jpg" class="product-thumb" alt="">
+            <button class="card-btn">ver mais</button>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-image">
+            <span class="discount-tag">10% de desconto</span>
+            <img src="https://livrariataverna.com.br/1152/aventuras-de-alice-no-pais-das-maravilhas-lewis-carroll.jpg" class="product-thumb" alt="">
+            <button class="card-btn">ver mais</button>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-image">
+            <img src="https://m.media-amazon.com/images/I/51gzrvHasGL.jpg" class="product-thumb" alt="">
+            <button class="card-btn">ver mais</button>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-image">
+            <img src="https://m.media-amazon.com/images/I/81Rr0awAmwL.jpg" class="product-thumb" alt="">
+            <button class="card-btn">ver mais</button>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-image">
+            <img src="https://leitorcompulsivo.com.br/wp-content/uploads/2018/07/Muitas_aguas.jpg" class="product-thumb" alt="">
+            <button class="card-btn">ver mais</button>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-image">
+            <img src="https://m.media-amazon.com/images/I/91uvqTqFM1L.jpg" class="product-thumb" alt="">
+            <button class="card-btn">ver mais</button>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-image">
+            <img src="https://m.media-amazon.com/images/I/61N2ZCfEB4L.jpg" class="product-thumb" alt="">
+            <button class="card-btn">ver mais</button>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-image">
+            <img src="https://m.media-amazon.com/images/I/91ETGRlNfCL.jpg" class="product-thumb" alt="">
+            <button class="card-btn">ver mais</button>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-image">
+            <span class="discount-tag">80% de desconto</span>
+            <img src="https://m.media-amazon.com/images/I/71p0560f0NL.jpg" class="product-thumb" alt="">
+            <button class="card-btn">ver mais</button>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-image">
+            <span class="discount-tag">30% de desconto</span>
+            <img src="https://m.media-amazon.com/images/I/81SWBRKfExL.jpg" class="product-thumb" alt="">
+            <button class="card-btn">ver mais</button>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-image">
+            <span class="discount-tag">10% de desconto</span>
+            <img src="https://livrariataverna.com.br/1152/aventuras-de-alice-no-pais-das-maravilhas-lewis-carroll.jpg" class="product-thumb" alt="">
+            <button class="card-btn">ver mais</button>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-image">
+            <img src="https://m.media-amazon.com/images/I/51gzrvHasGL.jpg" class="product-thumb" alt="">
+            <button class="card-btn">ver mais</button>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-image">
+            <img src="https://m.media-amazon.com/images/I/81Rr0awAmwL.jpg" class="product-thumb" alt="">
+            <button class="card-btn">ver mais</button>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-image">
+            <img src="https://leitorcompulsivo.com.br/wp-content/uploads/2018/07/Muitas_aguas.jpg" class="product-thumb" alt="">
+            <button class="card-btn">ver mais</button>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-image">
+            <img src="https://m.media-amazon.com/images/I/91uvqTqFM1L.jpg" class="product-thumb" alt="">
+            <button class="card-btn">ver mais</button>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-image">
+            <img src="https://m.media-amazon.com/images/I/61N2ZCfEB4L.jpg" class="product-thumb" alt="">
+            <button class="card-btn">ver mais</button>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-image">
+            <img src="https://m.media-amazon.com/images/I/91ETGRlNfCL.jpg" class="product-thumb" alt="">
+            <button class="card-btn">ver mais</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+     <!--lista de lrivos-->
+  <section class="product">
+    <h2 class="product-category">Terror</h2>
+    
+    <!--setinhas-->
+    <button class="pre-btn"><img src="https://cdn4.iconfinder.com/data/icons/defaulticon/icons/png/256x256/arrow-right.png" height="50px" width="50px" alt=""></button>
+    <button class="next-btn"><img src="https://cdn4.iconfinder.com/data/icons/defaulticon/icons/png/256x256/arrow-right.png" height="50px" width="50px" alt=""></button>
+
+    <!--lrivo-->
+    <div class="product-container">
+      <div class="product-card">
+        <div class="product-image">
+          <span class="discount-tag">50% de desconto</span>
+          <img src="https://m.media-amazon.com/images/I/61MgodE1s0L.jpg" class="product-thumb" alt="">
+          <button class="card-btn">ver mais</button>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-image">
+          <span class="discount-tag">20% de desconto</span>
+          <img src="https://kbimages1-a.akamaihd.net/3c3e59ba-b4a9-4712-992b-60ea4de58dad/1200/1200/False/carmilla-a-vampira-de-karnstein.jpg" class="product-thumb" alt="">
+          <button class="card-btn">ver mais</button>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-image">
+          <span class="discount-tag">5% de desconto</span>
+          <img src="https://m.media-amazon.com/images/I/A1bvtg4uwdL.jpg" class="product-thumb" alt="">
+          <button class="card-btn">ver mais</button>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-image">
+          <img src="https://m.media-amazon.com/images/I/61M8OAmSNFL.jpg" class="product-thumb" alt="">
+          <button class="card-btn">ver mais</button>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-image">
+          <img src="https://m.media-amazon.com/images/I/91GKn4g3fML.jpg" class="product-thumb" alt="">
+          <button class="card-btn">ver mais</button>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-image">
+          <img src="https://m.media-amazon.com/images/I/91yhuugA7nL.jpg" class="product-thumb" alt="">
+          <button class="card-btn">ver mais</button>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-image">
+          <img src="https://m.media-amazon.com/images/I/91ZEEdj0cCL.jpg" class="product-thumb" alt="">
+          <button class="card-btn">ver mais</button>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-image">
+          <span class="discount-tag">50% de desconto</span>
+          <img src="https://m.media-amazon.com/images/I/61MgodE1s0L.jpg" class="product-thumb" alt="">
+          <button class="card-btn">ver mais</button>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-image">
+          <span class="discount-tag">20% de desconto</span>
+          <img src="https://kbimages1-a.akamaihd.net/3c3e59ba-b4a9-4712-992b-60ea4de58dad/1200/1200/False/carmilla-a-vampira-de-karnstein.jpg" class="product-thumb" alt="">
+          <button class="card-btn">ver mais</button>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-image">
+          <span class="discount-tag">5% de desconto</span>
+          <img src="https://m.media-amazon.com/images/I/A1bvtg4uwdL.jpg" class="product-thumb" alt="">
+          <button class="card-btn">ver mais</button>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-image">
+          <img src="https://m.media-amazon.com/images/I/61M8OAmSNFL.jpg" class="product-thumb" alt="">
+          <button class="card-btn">ver mais</button>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-image">
+          <img src="https://m.media-amazon.com/images/I/91GKn4g3fML.jpg" class="product-thumb" alt="">
+          <button class="card-btn">ver mais</button>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-image">
+          <img src="https://m.media-amazon.com/images/I/91yhuugA7nL.jpg" class="product-thumb" alt="">
+          <button class="card-btn">ver mais</button>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-image">
+          <img src="https://m.media-amazon.com/images/I/91ZEEdj0cCL.jpg" class="product-thumb" alt="">
+          <button class="card-btn">ver mais</button>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-image">
+          <span class="discount-tag">50% de desconto</span>
+          <img src="https://m.media-amazon.com/images/I/61MgodE1s0L.jpg" class="product-thumb" alt="">
+          <button class="card-btn">ver mais</button>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-image">
+          <span class="discount-tag">20% de desconto</span>
+          <img src="https://kbimages1-a.akamaihd.net/3c3e59ba-b4a9-4712-992b-60ea4de58dad/1200/1200/False/carmilla-a-vampira-de-karnstein.jpg" class="product-thumb" alt="">
+          <button class="card-btn">ver mais</button>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-image">
+          <span class="discount-tag">5% de desconto</span>
+          <img src="https://m.media-amazon.com/images/I/A1bvtg4uwdL.jpg" class="product-thumb" alt="">
+          <button class="card-btn">ver mais</button>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-image">
+          <img src="https://m.media-amazon.com/images/I/61M8OAmSNFL.jpg" class="product-thumb" alt="">
+          <button class="card-btn">ver mais</button>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-image">
+          <img src="https://m.media-amazon.com/images/I/91GKn4g3fML.jpg" class="product-thumb" alt="">
+          <button class="card-btn">ver mais</button>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-image">
+          <img src="https://m.media-amazon.com/images/I/91yhuugA7nL.jpg" class="product-thumb" alt="">
+          <button class="card-btn">ver mais</button>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-image">
+          <img src="https://m.media-amazon.com/images/I/91ZEEdj0cCL.jpg" class="product-thumb" alt="">
+          <button class="card-btn">ver mais</button>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-image">
+          <span class="discount-tag">50% de desconto</span>
+          <img src="https://m.media-amazon.com/images/I/61MgodE1s0L.jpg" class="product-thumb" alt="">
+          <button class="card-btn">ver mais</button>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-image">
+          <span class="discount-tag">20% de desconto</span>
+          <img src="https://kbimages1-a.akamaihd.net/3c3e59ba-b4a9-4712-992b-60ea4de58dad/1200/1200/False/carmilla-a-vampira-de-karnstein.jpg" class="product-thumb" alt="">
+          <button class="card-btn">ver mais</button>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-image">
+          <span class="discount-tag">5% de desconto</span>
+          <img src="https://m.media-amazon.com/images/I/A1bvtg4uwdL.jpg" class="product-thumb" alt="">
+          <button class="card-btn">ver mais</button>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-image">
+          <img src="https://m.media-amazon.com/images/I/61M8OAmSNFL.jpg" class="product-thumb" alt="">
+          <button class="card-btn">ver mais</button>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-image">
+          <img src="https://m.media-amazon.com/images/I/91GKn4g3fML.jpg" class="product-thumb" alt="">
+          <button class="card-btn">ver mais</button>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-image">
+          <img src="https://m.media-amazon.com/images/I/91yhuugA7nL.jpg" class="product-thumb" alt="">
+          <button class="card-btn">ver mais</button>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-image">
+          <img src="https://m.media-amazon.com/images/I/91ZEEdj0cCL.jpg" class="product-thumb" alt="">
+          <button class="card-btn">ver mais</button>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-image">
+          <span class="discount-tag">50% de desconto</span>
+          <img src="https://m.media-amazon.com/images/I/61MgodE1s0L.jpg" class="product-thumb" alt="">
+          <button class="card-btn">ver mais</button>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-image">
+          <span class="discount-tag">20% de desconto</span>
+          <img src="https://kbimages1-a.akamaihd.net/3c3e59ba-b4a9-4712-992b-60ea4de58dad/1200/1200/False/carmilla-a-vampira-de-karnstein.jpg" class="product-thumb" alt="">
+          <button class="card-btn">ver mais</button>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-image">
+          <span class="discount-tag">5% de desconto</span>
+          <img src="https://m.media-amazon.com/images/I/A1bvtg4uwdL.jpg" class="product-thumb" alt="">
+          <button class="card-btn">ver mais</button>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-image">
+          <img src="https://m.media-amazon.com/images/I/61M8OAmSNFL.jpg" class="product-thumb" alt="">
+          <button class="card-btn">ver mais</button>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-image">
+          <img src="https://m.media-amazon.com/images/I/91GKn4g3fML.jpg" class="product-thumb" alt="">
+          <button class="card-btn">ver mais</button>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-image">
+          <img src="https://m.media-amazon.com/images/I/91yhuugA7nL.jpg" class="product-thumb" alt="">
+          <button class="card-btn">ver mais</button>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-image">
+          <img src="https://m.media-amazon.com/images/I/91ZEEdj0cCL.jpg" class="product-thumb" alt="">
+          <button class="card-btn">ver mais</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+    <!--Rodapé-->
+    <footer class="bg-light text-center text-lg-start">
+      <!-- Copyright -->
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+        Jéssica Rodrigues e Carlos Eduardo: coisinhas de rodapé
+      </div>
+      <!-- Copyright -->
+    </footer>
+
+  <script src="cafeteira.js"></script>
+</body>
